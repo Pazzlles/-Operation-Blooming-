@@ -440,7 +440,83 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6045077310578912643
+--- !u!1 &6923997368327104468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512823083270844410}
+  - component: {fileID: 7046104236164767570}
+  - component: {fileID: 8062063567811143520}
+  - component: {fileID: 845801049666076408}
+  - component: {fileID: 7201235803595138931}
+  - component: {fileID: 4047901543117876295}
+  - component: {fileID: 3930514972392996270}
+  m_Layer: 0
+  m_Name: BasicFlask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512823083270844410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.341, y: 1.835, z: 1.33}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8546569261779647267}
+  - {fileID: 2101547411822684087}
+  - {fileID: 3853174555362160909}
+  - {fileID: 3589529581919074913}
+  - {fileID: 4145010087016391781}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7046104236164767570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d6c031e624e8f468aa7594d69ab4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidWobble
+  liquidRenderer: {fileID: 8909712229913612365}
+  strength: 0.015
+  spring: 30
+  damping: 7
+  maxWobble: 1
+--- !u!114 &8062063567811143520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497fd8cebee17a34f98caad890f95fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidVolumeController
+  liquidMesh: {fileID: 3744303726678169349}
+  liquidRenderer: {fileID: 8909712229913612365}
+  fillPercent: 50
+  resolution: 16
+  useWobble: 1
+--- !u!114 &845801049666076408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,15 +527,72 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b808373b2dcd442bda29cf9025930b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiquidCavityGenerator
-  glassMesh: {fileID: 5063734029275807065}
-  bottomMarker: {fileID: 6206112916446549197}
-  rimMarker: {fileID: 6408967858393295200}
-  heightSegments: 48
-  radialSegments: 48
-  wallInset: 0.001
-  minRadius: 0.0001
---- !u!1 &7255935346513481667
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidAppearance
+  liquidRenderer: {fileID: 8909712229913612365}
+  surfaceRenderer: {fileID: 3493786564548788472}
+  liquidColor: {r: 0, g: 0.080596924, b: 1, a: 1}
+  transparency: 0.8
+--- !u!114 &7201235803595138931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ef2f3544725c84bbecbd7a7dcfe719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiquidMixer
+--- !u!54 &4047901543117876295
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3930514972392996270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923997368327104468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7811835, y: 2.1563885, z: 1.5798086}
+  m_Center: {x: -0.11653423, y: 1.0345412, z: -0.1559481}
+--- !u!1 &7072961619422933388
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
